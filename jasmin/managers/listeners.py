@@ -738,6 +738,7 @@ class SMPPClientSMListener:
             else:
                 # This is a DLR !
                 # Send DLR to DLRLookup
+                routable.pdu.dlr['text'] = ''
                 yield self.amqpBroker.publish(exchange='messaging',
                                               routing_key='dlr.deliver_sm',
                                               content=DLR(pdu_type=routable.pdu.id,
