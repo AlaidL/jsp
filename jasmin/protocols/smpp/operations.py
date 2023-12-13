@@ -147,7 +147,7 @@ class SMPPOperationFactory:
         # Possible data_coding values : 0,1,2,3,4,5,6,7,8,9,10,13,14
         # Set the max short message length depending on the
         # coding (7, 8 or 16 bits)
-        if kwargs['data_coding'] in [3, 6, 7, 10]:
+        if kwargs['data_coding'] in [6, 7, 10]:
             # 8 bit coding
             bits = 8
             maxSmLength = 140
