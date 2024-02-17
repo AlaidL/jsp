@@ -257,6 +257,9 @@ class SMPPOperationFactory:
             else:
                 message_state = MessageState.DELIVERED
                 sm_message_stat = 'DELIVRD'
+        elif message_status[:5] == 'ERROR':
+                message_state = MessageState.DELIVERED
+                sm_message_stat = 'DELIVRD'
         elif message_status == 'UNDELIV':
             message_state = MessageState.UNDELIVERABLE
         elif message_status == 'REJECTD':
@@ -300,7 +303,7 @@ class SMPPOperationFactory:
                 dest_addr_npi=self.get_enum(AddrNpi, source_addr_npi),
             )
         else:
-            Build DataSM pdu
+            # Build DataSM pdu
             pdu = DataSM(
                 source_addr=destination_addr,
                 destination_addr=source_addr,
