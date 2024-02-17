@@ -299,19 +299,19 @@ class SMPPOperationFactory:
                 dest_addr_ton=self.get_enum(AddrTon, source_addr_ton),
                 dest_addr_npi=self.get_enum(AddrNpi, source_addr_npi),
             )
-        else:
+        # else:
             # Build DataSM pdu
-            pdu = DataSM(
-                source_addr=destination_addr,
-                destination_addr=source_addr,
-                esm_class=EsmClass(EsmClassMode.DEFAULT, EsmClassType.SMSC_DELIVERY_RECEIPT),
-                receipted_message_id=msgid,
-                message_state=message_state,
-                source_addr_ton=self.get_enum(AddrTon, dest_addr_ton),
-                source_addr_npi=self.get_enum(AddrNpi, dest_addr_npi),
-                dest_addr_ton=self.get_enum(AddrTon, source_addr_ton),
-                dest_addr_npi=self.get_enum(AddrNpi, source_addr_npi),
-            )
+            # pdu = DataSM(
+            #     source_addr=destination_addr,
+            #     destination_addr=source_addr,
+            #     esm_class=EsmClass(EsmClassMode.DEFAULT, EsmClassType.SMSC_DELIVERY_RECEIPT),
+            #     receipted_message_id=msgid,
+            #     message_state=message_state,
+            #     source_addr_ton=self.get_enum(AddrTon, dest_addr_ton),
+            #     source_addr_npi=self.get_enum(AddrNpi, dest_addr_npi),
+            #     dest_addr_ton=self.get_enum(AddrTon, source_addr_ton),
+            #     dest_addr_npi=self.get_enum(AddrNpi, source_addr_npi),
+            # )
 
         return pdu
 
