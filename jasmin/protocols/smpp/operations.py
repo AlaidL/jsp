@@ -250,15 +250,11 @@ class SMPPOperationFactory:
             err = err.decode()
         sm_message_stat = message_status
         # Prepare message_state
-
         if message_status[:5] == 'ESME_':
             if message_status == 'ESME_ROK':
                 message_state = MessageState.DELIVERED
                 sm_message_stat = 'DELIVRD'
             else:
-                message_state = MessageState.DELIVERED
-                sm_message_stat = 'DELIVRD'
-        elif message_status[:5] == 'ERROR':
                 message_state = MessageState.DELIVERED
                 sm_message_stat = 'DELIVRD'
         elif message_status == 'UNDELIV':
