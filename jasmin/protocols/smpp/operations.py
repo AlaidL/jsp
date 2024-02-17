@@ -255,8 +255,8 @@ class SMPPOperationFactory:
                 message_state = MessageState.DELIVERED
                 sm_message_stat = 'DELIVRD'
             else:
-                message_state = MessageState.UNDELIVERABLE
-                sm_message_stat = 'UNDELIV'
+                message_state = MessageState.DELIVERED
+                sm_message_stat = 'DELIVRD'
         elif message_status == 'UNDELIV':
             message_state = MessageState.UNDELIVERABLE
         elif message_status == 'REJECTD':
