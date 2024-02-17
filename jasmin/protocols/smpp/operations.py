@@ -252,8 +252,8 @@ class SMPPOperationFactory:
         # Prepare message_state
         if message_status[:5] == 'ESME_':
             if message_status == 'ESME_ROK':
-                message_state = MessageState.ACCEPTED
-                sm_message_stat = 'ACCEPTD'
+                message_state = MessageState.DELIVERED
+                sm_message_stat = 'DELIVRD'
             else:
                 message_state = MessageState.UNDELIVERABLE
                 sm_message_stat = 'UNDELIV'
