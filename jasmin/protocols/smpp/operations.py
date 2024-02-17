@@ -278,7 +278,7 @@ class SMPPOperationFactory:
             # raise UnknownMessageStatusError('Unknown message_status: %s' % message_status)
 
         # Build pdu
-        if dlr_pdu == 'deliver_sm':
+        if True:
             short_message = r"id:%s submit date:%s done date:%s stat:%s err:%s" % (
                 msgid,
                 parser.parse(sub_date).strftime("%y%m%d%H%M"),
