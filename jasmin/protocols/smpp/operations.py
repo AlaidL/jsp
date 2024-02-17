@@ -250,34 +250,32 @@ class SMPPOperationFactory:
             err = err.decode()
         sm_message_stat = message_status
         # Prepare message_state
-        # if message_status[:5] == 'ESME_':
-        #     if message_status == 'ESME_ROK':
-        #         message_state = MessageState.DELIVERED
-        #         sm_message_stat = 'DELIVRD'
-        #     else:
-        #         message_state = MessageState.DELIVERED
-        #         sm_message_stat = 'DELIVRD'
-        # elif message_status[:5] == 'ERROR':
-        #         message_state = MessageState.DELIVERED
-        #         sm_message_stat = 'DELIVRD'
-        # elif message_status == 'UNDELIV':
-        #     message_state = MessageState.UNDELIVERABLE
-        # elif message_status == 'REJECTD':
-        #     message_state = MessageState.REJECTED
-        # elif message_status == 'DELIVRD':
-        #     message_state = MessageState.DELIVERED
-        # elif message_status == 'EXPIRED':
-        #     message_state = MessageState.EXPIRED
-        # elif message_status == 'DELETED':
-        #     message_state = MessageState.DELETED
-        # elif message_status == 'ACCEPTD':
-        #     message_state = MessageState.ACCEPTED
-        # elif message_status == 'ENROUTE':
-        #     message_state = MessageState.ENROUTE
-        # elif message_status == 'UNKNOWN':
-        #     message_state = MessageState.UNKNOWN
-        # else:
-        raise UnknownMessageStatusError('Unknown message_status: %s' % message_status)
+        if message_status[:5] == 'ESME_':
+            if message_status == 'ESME_ROK':
+                message_state = MessageState.DELIVERED
+                sm_message_stat = 'DELIVRD'
+            else:
+                message_state = MessageState.DELIVERED
+                sm_message_stat = 'DELIVRD'
+        elif message_status == 'UNDELIV':
+            message_state = MessageState.UNDELIVERABLE
+        elif message_status == 'REJECTD':
+            message_state = MessageState.REJECTED
+        elif message_status == 'DELIVRD':
+            message_state = MessageState.DELIVERED
+        elif message_status == 'EXPIRED':
+            message_state = MessageState.EXPIRED
+        elif message_status == 'DELETED':
+            message_state = MessageState.DELETED
+        elif message_status == 'ACCEPTD':
+            message_state = MessageState.ACCEPTED
+        elif message_status == 'ENROUTE':
+            message_state = MessageState.ENROUTE
+        elif message_status == 'UNKNOWN':
+            message_state = MessageState.UNKNOWN
+        else:
+            message_state = MessageState.DELIVERED
+            # raise UnknownMessageStatusError('Unknown message_status: %s' % message_status)
 
         # Build pdu
         if dlr_pdu == 'deliver_sm':
