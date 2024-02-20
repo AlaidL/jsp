@@ -252,11 +252,11 @@ class SMPPOperationFactory:
         # Prepare message_state
         if message_status[:5] == 'ESME_':
             if message_status == 'ESME_ROK':
-                message_state = MessageState.DELIVERED
-                sm_message_stat = 'DELIVRD'
+                message_state = MessageState.ACCEPTED
+                sm_message_stat = 'ACCEPTD'
             else:
-                message_state = MessageState.DELIVERED
-                sm_message_stat = 'DELIVRD'
+                message_state = MessageState.UNDELIVERABLE
+                sm_message_stat = 'UNDELIV'
         elif message_status == 'UNDELIV':
             message_state = MessageState.UNDELIVERABLE
         elif message_status == 'REJECTD':
@@ -278,7 +278,7 @@ class SMPPOperationFactory:
             # raise UnknownMessageStatusError('Unknown message_status: %s' % message_status)
 
         # Build pdu
-        if True:
+        if dlr_pdu == 'deliver_sm':
             short_message = r"id:%s submit date:%s done date:%s stat:%s err:%s" % (
                 msgid,
                 parser.parse(sub_date).strftime("%y%m%d%H%M"),

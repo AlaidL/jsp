@@ -138,8 +138,7 @@ class DLRLookup:
         if message.routing_key == 'dlr.submit_sm_resp':
             yield self.submit_sm_resp_dlr_callback(message)
         elif message.routing_key == 'dlr.deliver_sm':
-            self.log.error('Aqui llego el dlr bueno: %s', message.routing_key)
-            # yield self.deliver_sm_dlr_callback(message)
+            yield self.deliver_sm_dlr_callback(message)
         else:
             self.log.error('Unknown routing_key in dlr_callback_dispatcher: %s', message.routing_key)
             yield self.rejectMessage(message)

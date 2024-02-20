@@ -635,7 +635,7 @@ class DLRThrower(Thrower):
 
             if system_id not in bound_systemdids:
                 raise SystemIdNotBound(system_id)
-
+        
             # Build the Receipt PDU (data_sm)
             pdu = self.opFactory.getReceipt(dlr_pdu=self.config.dlr_pdu,
                                             msgid=msgid,
@@ -650,6 +650,10 @@ class DLRThrower(Thrower):
                                             dest_addr_npi=dest_addr_npi)
 
             # Pick a deliverer and sendRequest
+
+            
+
+
             if self.smpps_access == 'direct':
                 deliverer = bound_systemdids[system_id].getNextBindingForDelivery()
 
