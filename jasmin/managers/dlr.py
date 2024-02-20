@@ -367,9 +367,9 @@ class DLRLookup:
                         self.log.debug('Removing HTTP dlr map for msgid[%s]', submit_sm_queue_id)
                         yield self.redisClient.delete('dlr:%s' % submit_sm_queue_id)
             elif connector_type == 'smppsapi':
-                self.log.info("SYSTEM ID [cid:%s]",system_id)
                 self.log.debug('There is a SMPPs mapping for msgid[%s] ...', msgid)
                 system_id = dlr['system_id']
+                self.log.info("SYSTEM ID [cid:%s]",system_id)
                 source_addr_ton = to_enum(dlr['source_addr_ton'])
                 source_addr_npi = to_enum(dlr['source_addr_npi'])
                 source_addr = dlr['source_addr']
