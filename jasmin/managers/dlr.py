@@ -382,7 +382,7 @@ class DLRLookup:
                 self.log.info("SYSTEM Recepit [cid:%s]",registered_delivery_receipt)
                 self.log.info("SYSTEM ERROR CODE [cid:%s]",pdu_dlr_err)
                 
-                if pdu_cid == 'AltanSCD':
+                if pdu_cid == 'sAltanIner':
                     pdu_dlr_status='DELIVRD'
                     pdu_dlr_err = '000'
 
