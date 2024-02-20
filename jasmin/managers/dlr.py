@@ -137,9 +137,7 @@ class DLRLookup:
         # Dispatching
         if message.routing_key == 'dlr.submit_sm_resp':
             yield self.submit_sm_resp_dlr_callback(message)
-            self.log.error('entro a submit')
         elif message.routing_key == 'dlr.deliver_sm':
-            self.log.error('entro a deliver')
             yield self.deliver_sm_dlr_callback(message)
         else:
             self.log.error('Unknown routing_key in dlr_callback_dispatcher: %s', message.routing_key)
@@ -367,10 +365,7 @@ class DLRLookup:
                         self.log.debug('Removing HTTP dlr map for msgid[%s]', submit_sm_queue_id)
                         yield self.redisClient.delete('dlr:%s' % submit_sm_queue_id)
             elif connector_type == 'smppsapi':
-                self.log.debug('There is a SMPPs mapping for msgid[%s] ...', msgid)
                 system_id = dlr['system_id']
-                self.log.info("SYSTEM ID [cid:%s]",pdu_cid)
-                self.log.info("SYSTEM DLR STATUS FULL [cid:%s]",pdu_dlr_status)
                 source_addr_ton = to_enum(dlr['source_addr_ton'])
                 source_addr_npi = to_enum(dlr['source_addr_npi'])
                 source_addr = dlr['source_addr']
@@ -379,8 +374,7 @@ class DLRLookup:
                 destination_addr = dlr['destination_addr']
                 sub_date = dlr['sub_date']
                 registered_delivery_receipt = to_enum(dlr['rd_receipt'])
-                self.log.info("SYSTEM Recepit [cid:%s]",registered_delivery_receipt)
-                self.log.info("SYSTEM ERROR CODE [cid:%s]",pdu_dlr_err)
+               
                 
                 if pdu_cid == 'sAltanIner':
                     pdu_dlr_status='DELIVRD'
