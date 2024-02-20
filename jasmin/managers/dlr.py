@@ -370,6 +370,7 @@ class DLRLookup:
                 self.log.debug('There is a SMPPs mapping for msgid[%s] ...', msgid)
                 system_id = dlr['system_id']
                 self.log.info("SYSTEM ID [cid:%s]",pdu_cid)
+                self.log.info("SYSTEM DLR STATUS FULL [cid:%s]",pdu_dlr_status)
                 source_addr_ton = to_enum(dlr['source_addr_ton'])
                 source_addr_npi = to_enum(dlr['source_addr_npi'])
                 source_addr = dlr['source_addr']
@@ -378,6 +379,11 @@ class DLRLookup:
                 destination_addr = dlr['destination_addr']
                 sub_date = dlr['sub_date']
                 registered_delivery_receipt = to_enum(dlr['rd_receipt'])
+
+                # if pdu_cid == 'AltanSCD'
+
+
+
 
                 if isinstance(source_addr, int):
                     source_addr = str(source_addr)
