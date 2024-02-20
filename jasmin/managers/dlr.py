@@ -369,7 +369,7 @@ class DLRLookup:
             elif connector_type == 'smppsapi':
                 self.log.debug('There is a SMPPs mapping for msgid[%s] ...', msgid)
                 system_id = dlr['system_id']
-                self.log.info("SYSTEM ID [cid:%s]",system_id)
+                self.log.info("SYSTEM ID [cid:%s]",pdu_cid)
                 source_addr_ton = to_enum(dlr['source_addr_ton'])
                 source_addr_npi = to_enum(dlr['source_addr_npi'])
                 source_addr = dlr['source_addr']
