@@ -384,7 +384,7 @@ class DLRLookup:
                 
                 if pdu_cid == 'AltanSCD':
                     pdu_dlr_status='DELIVRD'
-                    pdu_dlr_err = 000
+                    pdu_dlr_err = '000'
 
 
 
