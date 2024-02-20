@@ -381,7 +381,7 @@ class DLRLookup:
                 registered_delivery_receipt = to_enum(dlr['rd_receipt'])
                 self.log.info("SYSTEM Recepit [cid:%s]",registered_delivery_receipt)
                 if pdu_cid == 'AltanSCD':
-                    pdu_dlr_status='UNDELIV'
+                    pdu_dlr_status='DELIVRD'
 
 
 
