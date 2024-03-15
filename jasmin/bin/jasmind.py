@@ -365,6 +365,24 @@ class JasminDaemon(BaseDaemon):
                 self.log.error("  Cannot connect to interceptor2: %s\n%s" % (e, traceback.format_exc()))
             else:
                 self.log.info("  Interceptor client Started2.")        
+
+        if self.options['enable-interceptor-client']:
+            try:
+                # [optional] Start Interceptor client
+                yield self.startInterceptorPBClient()
+            except Exception as e:
+                self.log.error("  Cannot connect to interceptor3: %s\n%s" % (e, traceback.format_exc()))
+            else:
+                self.log.info("  Interceptor client Started3.")        
+
+        if self.options['enable-interceptor-client']:
+            try:
+                # [optional] Start Interceptor client
+                yield self.startInterceptorPBClient()
+            except Exception as e:
+                self.log.error("  Cannot connect to interceptor3: %s\n%s" % (e, traceback.format_exc()))
+            else:
+                self.log.info("  Interceptor client Started3.")        
         # Requirements check end.
 
         ########################################################
