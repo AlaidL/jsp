@@ -399,7 +399,7 @@ class JasminDaemon(BaseDaemon):
                 self.log.error("  Cannot connect to interceptor6: %s\n%s" % (e, traceback.format_exc()))
             else:
                 self.log.info("  Interceptor client Started6.")  
-            if self.options['enable-interceptor-client']:
+        if self.options['enable-interceptor-client']:
             try:
                 # [optional] Start Interceptor client
                 yield self.startInterceptorPBClient()
@@ -407,7 +407,7 @@ class JasminDaemon(BaseDaemon):
                 self.log.error("  Cannot connect to interceptor7: %s\n%s" % (e, traceback.format_exc()))
             else:
                 self.log.info("  Interceptor client Started7.")  
-            if self.options['enable-interceptor-client']:
+        if self.options['enable-interceptor-client']:
             try:
                 # [optional] Start Interceptor client
                 yield self.startInterceptorPBClient()
@@ -415,7 +415,7 @@ class JasminDaemon(BaseDaemon):
                 self.log.error("  Cannot connect to interceptor8: %s\n%s" % (e, traceback.format_exc()))
             else:
                 self.log.info("  Interceptor client Started8.")  
-            if self.options['enable-interceptor-client']:
+        if self.options['enable-interceptor-client']:
             try:
                 # [optional] Start Interceptor client
                 yield self.startInterceptorPBClient()
@@ -423,7 +423,7 @@ class JasminDaemon(BaseDaemon):
                 self.log.error("  Cannot connect to interceptor9: %s\n%s" % (e, traceback.format_exc()))
             else:
                 self.log.info("  Interceptor client Started9.")  
-            if self.options['enable-interceptor-client']:
+        if self.options['enable-interceptor-client']:
             try:
                 # [optional] Start Interceptor client
                 yield self.startInterceptorPBClient()
