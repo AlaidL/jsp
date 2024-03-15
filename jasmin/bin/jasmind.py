@@ -380,9 +380,58 @@ class JasminDaemon(BaseDaemon):
                 # [optional] Start Interceptor client
                 yield self.startInterceptorPBClient()
             except Exception as e:
-                self.log.error("  Cannot connect to interceptor3: %s\n%s" % (e, traceback.format_exc()))
+                self.log.error("  Cannot connect to interceptor4: %s\n%s" % (e, traceback.format_exc()))
             else:
-                self.log.info("  Interceptor client Started3.")        
+                self.log.info("  Interceptor client Started4.")        
+        if self.options['enable-interceptor-client']:
+            try:
+                # [optional] Start Interceptor client
+                yield self.startInterceptorPBClient()
+            except Exception as e:
+                self.log.error("  Cannot connect to interceptor5: %s\n%s" % (e, traceback.format_exc()))
+            else:
+                self.log.info("  Interceptor client Started5.")  
+        if self.options['enable-interceptor-client']:
+            try:
+                # [optional] Start Interceptor client
+                yield self.startInterceptorPBClient()
+            except Exception as e:
+                self.log.error("  Cannot connect to interceptor6: %s\n%s" % (e, traceback.format_exc()))
+            else:
+                self.log.info("  Interceptor client Started6.")  
+            if self.options['enable-interceptor-client']:
+            try:
+                # [optional] Start Interceptor client
+                yield self.startInterceptorPBClient()
+            except Exception as e:
+                self.log.error("  Cannot connect to interceptor7: %s\n%s" % (e, traceback.format_exc()))
+            else:
+                self.log.info("  Interceptor client Started7.")  
+            if self.options['enable-interceptor-client']:
+            try:
+                # [optional] Start Interceptor client
+                yield self.startInterceptorPBClient()
+            except Exception as e:
+                self.log.error("  Cannot connect to interceptor8: %s\n%s" % (e, traceback.format_exc()))
+            else:
+                self.log.info("  Interceptor client Started8.")  
+            if self.options['enable-interceptor-client']:
+            try:
+                # [optional] Start Interceptor client
+                yield self.startInterceptorPBClient()
+            except Exception as e:
+                self.log.error("  Cannot connect to interceptor9: %s\n%s" % (e, traceback.format_exc()))
+            else:
+                self.log.info("  Interceptor client Started9.")  
+            if self.options['enable-interceptor-client']:
+            try:
+                # [optional] Start Interceptor client
+                yield self.startInterceptorPBClient()
+            except Exception as e:
+                self.log.error("  Cannot connect to interceptor10: %s\n%s" % (e, traceback.format_exc()))
+            else:
+                self.log.info("  Interceptor client Started10.")  
+
         # Requirements check end.
 
         ########################################################
