@@ -245,7 +245,7 @@ class DLRLookup:
 
                 # Do we need to forward the receipt to the original sender ?
                 if ((dlr_status == 'ESME_ROK' and registered_delivery_receipt in
-                    [RegisteredDeliveryReceipt.SMSC_DELIVERY_RECEIPT_REQUESTED_FOR_FAILURE, RegisteredDeliveryReceipt.SMSC_DELIVERY_RECEIPT_REQUESTED]) or
+                    [RegisteredDeliveryReceipt.SMSC_DELIVERY_RECEIPT_REQUESTED_FOR_FAILURE, RegisteredDeliveryReceipt.SMSC_DELIVERY_RECEIPT_REQUESTED,RegisteredDeliveryReceipt.NO_SMSC_DELIVERY_RECEIPT_REQUESTED]) or
                         (dlr_status != 'ESME_ROK' and
                                  registered_delivery_receipt == RegisteredDeliveryReceipt.SMSC_DELIVERY_RECEIPT_REQUESTED_FOR_FAILURE)):
                     self.log.debug('Got DLR information for msgid[%s], registered_deliver%s, system_id:%s',
