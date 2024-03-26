@@ -242,7 +242,7 @@ class SMPPClientManagerPB(pb.Avatar):
             defer.returnValue(False)
 
         # Fix prefetch limit per consumer to 1 to get correct throttling
-        yield self.amqpBroker.chan.basic_qos(prefetch_count=15)
+        yield self.amqpBroker.chan.basic_qos(prefetch_count=40)
 
         # Declare queues
         # First declare the messaging exchange (has no effect if its already declared)
@@ -615,7 +615,8 @@ class SMPPClientManagerPB(pb.Avatar):
                 self.redisClient.hmset(hashKey, hashValues).addCallback(
                     lambda response: self.redisClient.expire(
                         hashKey, connector['config'].dlr_expiry))
-        elif (isinstance(source_connector, SMPPServerProtocol)):
+        elif (isinstance(source_connector, SMPPServerProtocol) and
+              SubmitSmPDU.params['registered_delivery'].receipt != RegisteredDeliveryReceipt.NO_SMSC_DELIVERY_RECEIPT_REQUESTED):
             # If submit_sm is successfully sent from a SMPPServerProtocol connector and DLR is
             # requested, then map message-id to the source_connector to permit related deliver_sm
             # messages holding further receipts to be sent back to the right connector
