@@ -615,7 +615,7 @@ class SMPPClientManagerPB(pb.Avatar):
                 self.redisClient.hmset(hashKey, hashValues).addCallback(
                     lambda response: self.redisClient.expire(
                         hashKey, connector['config'].dlr_expiry))
-        elif (isinstance(source_connector, SMPPServerProtocol) :
+        elif (isinstance(source_connector, SMPPServerProtocol)) :
             # If submit_sm is successfully sent from a SMPPServerProtocol connector and DLR is
             # requested, then map message-id to the source_connector to permit related deliver_sm
             # messages holding further receipts to be sent back to the right connector
