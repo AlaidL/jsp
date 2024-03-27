@@ -284,7 +284,7 @@ class SMPPOperationFactory:
                 parser.parse(sub_date).strftime("%y%m%d%H%M"),
                 datetime.datetime.now().strftime("%y%m%d%H%M"),
                 sm_message_stat,
-                err,
+                00,
             )
 
             # Build DeliverSM pdu
