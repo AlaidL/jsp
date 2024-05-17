@@ -30,4 +30,4 @@ http_throughput_per_worker = 15
 # When set to True, the batch executor will consider Jasmin's response time to
 # control the batch throughput, slower response time will slow down the throughput
 # and vice-versa
-smart_qos = True
+smart_qos = False
